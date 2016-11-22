@@ -1,0 +1,11 @@
+auto lo
+
+iface lo inet loopback
+
+iface eth0 inet manual
+
+iface default inet static
+  address {{ dramble_ip_address }}/24
+  netmask 255.255.255.0
+  gateway 192.168.1.1
+  dns-nameservers {{ dns_nameservers | join(' ') }}
